@@ -48,9 +48,12 @@ export default function RootLayout({
                 <a className="transition-colors hover:text-[var(--ink)]" href="#archive">
                   Archive
                 </a>
-                <button className="rounded-full border border-[var(--line)] bg-white/60 px-4 py-2 text-xs uppercase tracking-[0.3em] text-[var(--ink)]">
+                <a
+                  className="rounded-full border border-[var(--line)] bg-white/60 px-4 py-2 text-xs uppercase tracking-[0.3em] text-[var(--ink)]"
+                  href="/cart"
+                >
                   Cart
-                </button>
+                </a>
               </nav>
             </div>
           </header>
