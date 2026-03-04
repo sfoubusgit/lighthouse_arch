@@ -3,11 +3,7 @@ import Stripe from "stripe";
 
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
 
-const stripe = stripeSecretKey
-  ? new Stripe(stripeSecretKey, {
-      apiVersion: "2024-06-20",
-    })
-  : null;
+const stripe = stripeSecretKey ? new Stripe(stripeSecretKey) : null;
 
 const fallbackItems = [
   { name: "ashen 01", price: 4, quantity: 1 },
