@@ -39,13 +39,22 @@ export default function RootLayout({
                 </span>
               </div>
               <nav className="hidden items-center gap-6 text-sm text-[var(--muted)] md:flex">
-                <a className="transition-colors hover:text-[var(--ink)]" href="#collections">
+                <a
+                  className="transition-colors hover:text-[var(--ink)]"
+                  href="/#collections"
+                >
                   Collections
                 </a>
-                <a className="transition-colors hover:text-[var(--ink)]" href="#signal">
+                <a
+                  className="transition-colors hover:text-[var(--ink)]"
+                  href="/#signal"
+                >
                   Signal
                 </a>
-                <a className="transition-colors hover:text-[var(--ink)]" href="#archive">
+                <a
+                  className="transition-colors hover:text-[var(--ink)]"
+                  href="/#archive"
+                >
                   Archive
                 </a>
                 <a
