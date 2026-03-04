@@ -3,8 +3,7 @@
 export const dynamic = "force-dynamic";
 
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 type Entry = {
   title: string;
@@ -110,8 +109,12 @@ const signalSize = 4;
 
 export default function Home() {
   const [signalSeed, setSignalSeed] = useState(0);
-  const searchParams = useSearchParams();
-  const checkoutStatus = searchParams.get("checkout");
+  const [checkoutStatus, setCheckoutStatus] = useState<string | null>(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    setCheckoutStatus(params.get("checkout"));
+  }, []);
 
   const signalEntries = useMemo(() => {
     const start = signalSeed % archiveEntries.length;
