@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 import { useMemo, useState } from "react";
 
 type Entry = {
@@ -107,6 +108,8 @@ const signalSize = 4;
 
 export default function Home() {
   const [signalSeed, setSignalSeed] = useState(0);
+  const searchParams = useSearchParams();
+  const checkoutStatus = searchParams.get("checkout");
 
   const signalEntries = useMemo(() => {
     const start = signalSeed % archiveEntries.length;
@@ -119,6 +122,11 @@ export default function Home() {
     <div>
       <section className="mx-auto max-w-6xl px-6 pb-16 pt-16 md:pt-24">
         <div className="flex flex-col gap-8">
+          {checkoutStatus === "success" && (
+            <div className="rounded-2xl border border-[var(--line)] bg-white/80 px-5 py-4 text-xs uppercase tracking-[0.3em] text-[var(--muted)]">
+              Checkout confirmed · Your order is secured in the archive.
+            </div>
+          )}
           <div className="max-w-2xl space-y-4">
             <p className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
               Archive Signal
