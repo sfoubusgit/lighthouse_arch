@@ -1,4 +1,7 @@
-﻿"use client";`r`n`r`nexport const dynamic = "force-dynamic";`r`n
+﻿"use client";
+
+export const dynamic = "force-dynamic";
+
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useMemo, useState } from "react";
